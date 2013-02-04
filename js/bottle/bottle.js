@@ -107,7 +107,9 @@ var BOTTLE_INIT = 'btInit',
      * Initialize bottle UI library , create instances with supported data-roles.
      *
      * @method init
-     * @param hideURL {Boolean|Node} auto hide URL Bar when bottle inited or orientation changed. If a Node is provided, try to initialize Bottle widgets for this Node.
+     * @param hideURL {Boolean|Node} auto hide URL Bar when bottle inited or
+              orientation changed. If a Node is provided, try to initialize
+              Bottle widgets for this Node.
      */
     init = function (initCfg) {
         var pageNode = Y.one('[data-role=page]'),

@@ -307,7 +307,8 @@ PhotoGrid = Y.Base.create('btphotogrid', Y.Widget, [Y.Bottle.SyncScroll], {
         },
 
         /**
-         * Default column width. Column number will be decided by Math.round(parentWidth / columnWidth), and then all these columns will be fitted equally.
+         * Default column width. Column number will be decided by
+           Math.round(parentWidth / columnWidth), and then all these columns will be fitted equally.
          *
          * @attribute columnWidth
          * @type Number
