@@ -12,6 +12,7 @@ body.btFixed .yui3-btshortcut,
 body.btFixed .yui3-btoverlay {position:fixed}
 
 .btHidden {display:none}
+.btRoot {position:absolute;top:0;left:0}
 
 .bt_posfixed{position:absolute;top:10px;left:0;overflow:scroll;width:30px;height:30px}
 .bt_posfixed div{height:100px;width:100%;position:relative}

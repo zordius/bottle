@@ -9,6 +9,7 @@ Bottle is a mobile HTML5 framework javascript library, provides a lot of Mobile 
 Description
 -----------
 
+To know more, please read documents here: http://zordius.github.com/yui3-gallery/gallery-bottle/
 
 Note
 ----
