@@ -85,6 +85,7 @@ Y.namespace('Bottle').Container = Y.Base.create('btcontainer', Y.Widget, [Y.Widg
             bodyNode = this.get('bodyNode'),
             footerNode = this.get('footerNode'),
             scrollView = new Y.ScrollView(Y.merge(this.get('cfgScroll'), {
+                axis: 'y',
                 srcNode: scrollNode
             }));
 
