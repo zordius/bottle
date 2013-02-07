@@ -50,4 +50,4 @@
 
 .btHideSCO:not(.btReady) [data-role=shortcut],
 .btHideSCO:not(.btReady) [data-role=overlay]
- {position:absolute}
+ {position:absolute;left:-9999px}
