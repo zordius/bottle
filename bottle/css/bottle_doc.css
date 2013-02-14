@@ -32,6 +32,10 @@
     border-top:3px double #ccc;
 }
 
+pre.code {
+    clear:both;
+}
+
 h3 {
     color:#c84;
 }
