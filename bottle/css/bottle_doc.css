@@ -47,10 +47,6 @@ body.btInit {
     max-width:100%;
 }
 
-.bt-container-scroll {
-    overflow:hidden;
-}
-
 .btInit #hd {
     min-width:0;
     max-width:100%;
