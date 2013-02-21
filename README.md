@@ -11,15 +11,4 @@ Description
 
 To know more, please read documents here: http://zordius.github.com/yui3-gallery/gallery-bottle/
 
-Note
-----
-
-*   
-
-Known Issue
------------
-
-*   
-
-Code Sample
------------
+Look a video guide: http://youtu.be/ENQBkWwoMpk
