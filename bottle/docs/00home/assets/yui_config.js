@@ -13,7 +13,7 @@ var debug = location.href.match(/(#|:)debug/),
                             trigger: 'scrollview-scrollbars',
                             test: function () {
                                 var IE = navigator.userAgent.match(/MSIE (\d+)/);
-                                return IE && (IE[1] < 8);
+                                return IE && (IE[1] < 9);
                             }
                         }
                     }
