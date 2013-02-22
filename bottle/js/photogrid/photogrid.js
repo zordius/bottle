@@ -15,7 +15,8 @@ var COLUMN_CHANGE = 'columnWidthChange',
     CLASSES = {
         COLUMN: PREFIX + 'column',
         MODULE: PREFIX + 'module',
-        HIDDEN: PREFIX + 'hidden'
+        HIDDEN: PREFIX + 'hidden',
+        RENDER: PREFIX + 'render'
     },
 
     HTMLS = {
@@ -207,10 +208,15 @@ PhotoGrid = Y.Base.create('btphotogrid', Y.Widget, [Y.Bottle.SyncScroll], {
             return;
         }
 
+        if (start) {
+            this.get('contentBox').addClass(CLASSES.RENDER);
+        }
+
         this._bpgRendering = true;
 
         if (this._bpgImages.length <= this._bpgRendered) {
             this._bpgRendering = false;
+            this.get('contentBox').removeClass(CLASSES.RENDER);
             this.syncScroll();
             this.fire(RENDER_FINISHED);
             return;
