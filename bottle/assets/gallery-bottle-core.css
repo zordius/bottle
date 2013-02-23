@@ -10,7 +10,8 @@ body.btFocus.btFixed .btFixedScroll {margin:0!important}
 
 body.btFixed .yui3-btshortcut,
 body.btFixed .yui3-btoverlay {position:fixed}
-
+html.bov_display{overflow-y:scroll}
+html.bov_display.body{overflow:hidden}
 .btHidden {display:none}
 .btRoot {position:absolute;top:0;left:0;*z-index:150}
 .btDummy {overflow:hidden;height:0}

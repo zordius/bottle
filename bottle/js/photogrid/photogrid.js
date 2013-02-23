@@ -15,8 +15,8 @@ var COLUMN_CHANGE = 'columnWidthChange',
     CLASSES = {
         COLUMN: PREFIX + 'column',
         MODULE: PREFIX + 'module',
-        HIDDEN: PREFIX + 'hidden',
-        RENDER: PREFIX + 'render'
+        RENDER: PREFIX + 'render',
+        ERROR: PREFIX + 'error'
     },
 
     HTMLS = {
@@ -227,6 +227,7 @@ PhotoGrid = Y.Base.create('btphotogrid', Y.Widget, [Y.Bottle.SyncScroll], {
         if (img.width || img.error) {
             if (img.error) {
                 img.load.setAttribute('src', this.get('errorImage'));
+                img.module.addClass(CLASSES.ERROR);
             }
             this._minColumn().append(img.module);
             this._bpgRendered += 1;

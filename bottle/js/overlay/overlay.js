@@ -4,7 +4,8 @@
  *
  * @module gallery-bt-overlay
  */
-var body = Y.one('body'),
+var html = Y.one('html'),
+    body = Y.one('body'),
     Mask = Y.one('.bt-overlay-mask') || body.appendChild(Y.Node.create('<div class="bt-overlay-mask"></div>')),
     WIDTH_CHANGE = 'widthChange',
     HEIGHT_CHANGE = 'heightChange',
@@ -15,6 +16,7 @@ var body = Y.one('body'),
 
     instances = [],
     current,
+    scrollY,
 
     POSITIONS = {
         top: [0, -1],
@@ -236,6 +238,28 @@ var body = Y.one('body'),
             } else {
                 this._updatePositionShow({visible: true});
                 current = undefined;
+            }
+
+            if (Y.Bottle.get('nativeScroll')) {
+                if (current) {
+                    scrollY = Y.Bottle.Page.getScrollY();
+                    if (scrollY) {
+                        html.addClass('bov_display');
+                        body.setStyles({
+                            top: -scrollY + 'px',
+                            height: scrollY + Y.Bottle.Device.getBrowserHeight()
+                        });
+                    }
+                } else {
+                    if (scrollY) {
+                        html.removeClass('bov_display');
+                        body.setStyles({
+                            top: '',
+                            height: 'auto'
+                        });
+                        Y.Bottle.Page.scrollTo(scrollY);
+                    }
+                }
             }
 
             finalPos = this.getShowHideXY(show);
