@@ -149,6 +149,10 @@ var BOTTLE_INIT = 'btInit',
                     flags.positionFixed = true;
                     body.addClass(BOTTLE_FIXED);
                 }
+                if (Y.UA.ie > 9) {
+                    styles.scroll.overflowX = '';
+                    styles.scroll.height = 'auto';
+                }
                 htmlbody.setStyles(styles.scroll);
                 body.addClass(BOTTLE_NATIVE);
                 pageWidget.item(0).get('scrollView').disable().unplug(Y.Plugin.ScrollViewScrollbars)._set('axis', '');

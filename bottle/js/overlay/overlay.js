@@ -241,22 +241,20 @@ var html = Y.one('html'),
             }
 
             if (Y.Bottle.get('nativeScroll')) {
-                if (current) {
+                if (show) {
                     scrollY = Y.Bottle.Page.getScrollY();
-                    if (scrollY) {
-                        html.addClass('bov_display');
-                        body.setStyles({
-                            top: -scrollY + 'px',
-                            height: scrollY + Y.Bottle.Device.getBrowserHeight()
-                        });
-                    }
+                    html.addClass('bov_display');
+                    body.setStyles({
+                        top: -scrollY + 'px',
+                        height: scrollY + Y.Bottle.Device.getBrowserHeight()
+                    });
                 } else {
+                    html.removeClass('bov_display');
+                    body.setStyles({
+                        top: '',
+                        height: 'auto'
+                    });
                     if (scrollY) {
-                        html.removeClass('bov_display');
-                        body.setStyles({
-                            top: '',
-                            height: 'auto'
-                        });
                         Y.Bottle.Page.scrollTo(scrollY);
                     }
                 }
