@@ -155,7 +155,7 @@ var BOTTLE_INIT = 'btInit',
                 }
                 htmlbody.setStyles(styles.scroll);
                 body.addClass(BOTTLE_NATIVE);
-                pageWidget.item(0).get('scrollView').disable().unplug(Y.Plugin.ScrollViewScrollbars)._set('axis', '');
+                pageWidget.item(0).get('scrollView').disable().unplug(Y.Plugin.ScrollViewScrollbars)._set('axis', '')._bindDrag();
                 Y.publish(BOTTLE_NATIVE, {fireOnce: true});
                 Y.fire(BOTTLE_NATIVE);
                 Y.publish(SYNC_SCREEN);
