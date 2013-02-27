@@ -240,7 +240,7 @@ var html = Y.one('html'),
                 current = undefined;
             }
 
-            if (Y.Bottle.get('nativeScroll')) {
+            if (Y.Bottle.get('nativeScroll') && !Y.Bottle.Device.getTouchSupport()) {
                 if (show) {
                     scrollY = Y.Bottle.Page.getScrollY();
                     html.addClass('bov_display');
