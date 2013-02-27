@@ -40,8 +40,29 @@ h3 {
     color:#c84;
 }
 
+div.video a {
+    display:none;
+}
+
+div.video {
+    float:right;
+}
+
 body.btInit {
     background:#aaa;
+}
+
+body.btInit div.video {
+    float: none;
+    display: inline;
+}
+
+body.btInit div.video a {
+    display: inline;
+}
+
+body.btInit div.video iframe {
+    display: none;
 }
 
 .btInit #doc {
