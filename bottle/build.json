@@ -55,6 +55,7 @@
             "config": {
                 "requires": [
                     "scrollview",
+                    "transition-timer",
                     "widget-child",
                     "json-parse",
                     "gallery-zui-attribute",

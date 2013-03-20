@@ -60,7 +60,11 @@ var positionFixedSupport = null,
             return touchSupport;
         }
 
-        touchSupport = (((Y.config.win && ('ontouchstart' in Y.config.win)) || (Y.config.win && ('msPointerEnabled' in Y.config.win.navigator))) && !(Y.UA.chrome && Y.UA.chrome < 6));
+        touchSupport = (
+            ((Y.config.win && ('ontouchstart' in Y.config.win))
+             || (Y.config.win && ('msPointerEnabled' in Y.config.win.navigator))
+            ) && !(Y.UA.chrome && Y.UA.chrome < 6)
+        );
 
         return touchSupport;
     },

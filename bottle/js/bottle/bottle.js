@@ -180,6 +180,16 @@ var BOTTLE_INIT = 'btInit',
         });
 
         initRoot.all('[data-role=overlay]').each(function (overlayNode) {
+            var S = overlayNode.getData('desk-scroll');
+
+            if ((S === 'true') || !Y.Bottle.Device.getTouchSupport()) {
+                overlayNode.all('> [data-role=container]').each(function (O) {
+                    O.setAttribute('data-role', 'desktopcontainer').addClass('btDeskContainer');
+                    O.all('[data-role=header]').addClass('btHeader');
+                    O.all('[data-role=footer]').addClass('btFooter');
+                });
+            }
+
             new Y.Bottle.Overlay({
                 srcNode: overlayNode,
                 visible: false,

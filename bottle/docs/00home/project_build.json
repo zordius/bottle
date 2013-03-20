@@ -1,7 +1,7 @@
 {
     "projectName": "Mobile UI Library - Bottle",
     "projectVersion": "0.2.0",
-    "yuiVersion": "3.8.1",
+    "yuiVersion": "3.9.0",
     "useParams": "'gallery-bottle'",
     "apiDocUrl": "/api/",
     "yuiParams": "{gallery: 'gallery-2013.02.27-21-03'}",

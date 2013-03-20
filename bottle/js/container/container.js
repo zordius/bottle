@@ -42,6 +42,10 @@ var HEIGHT_CHANGE = 'heightChange',
         }
     };
 
+    if (navigator.userAgent.match(/Butterfly/) && ! Y.UA.chrome) {
+        Y.Transition.useNative = false;
+    }
+
 /**
  * A class for constructing container instances.
  *
@@ -94,14 +98,13 @@ Y.namespace('Bottle').Container = Y.Base.create('btcontainer', Y.Widget, [Y.Widg
 
         srcNode.append(scrollNode);
         scrollNode.append(headerNode);
-
-        if (Y.UA.ie && Y.UA.ie < 8) {
-            scrollNode.append('<div class="btDummy"></div>');
-        }
-
         scrollNode.append(bodyNode);
         scrollNode.append(footerNode);
         scrollView.render();
+
+        if (Y.UA.ie && Y.UA.ie < 8) {
+            scrollView.get('boundingBox').insert('<div class="btDummy"></div>', 'before');
+        }
 
         // When HTML_PARSER running, there was no scrollView,
         // so we trigger value setter function again here.

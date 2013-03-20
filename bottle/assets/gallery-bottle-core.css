@@ -1,7 +1,7 @@
 html{height:100%}
 body{position:relative}
-body.btInit{-webkit-text-size-adjust:100%}
-body.btFixed .btFixed {position:fixed;z-Index:50}
+body.btInit{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body.btFixed .btFixed {position:fixed;z-index:50}
 body.btFixed .btHeader.btFixed {top:0}
 body.btFixed .btFooter.btFixed {bottom:0}
 body.btFocus.btFixed .btHeader.btFixed,
@@ -12,6 +12,7 @@ body.btFixed .yui3-btshortcut,
 body.btFixed .yui3-btoverlay {position:fixed}
 html.bov_display{overflow-y:scroll!important}
 html.bov_display body{position:absolute!important;overflow:hidden!important}
+html.bov_desktop{overflow:hidden!important}
 .btHidden {display:none}
 .btRoot {position:absolute;top:0;left:0;*z-index:160}
 .btDummy {overflow:hidden;height:0}
@@ -27,7 +28,8 @@ html.bov_display body{position:absolute!important;overflow:hidden!important}
 .bt-container-scroll.yui3-widget-content-expanded{height:auto}
 .bt-container-scroll{*overflow:visible!important}
 .btp-native .yui3-btcontainer{position:relative}
-.btHeader, .btFooter{width:100%;box-sizing:border-box;-moz-box-sizing:border-box;left:0}
+.btHeader, .btFooter{width:100%;box-sizing:border-box;-moz-box-sizing:border-box;-moz-box-sizing:border-box;left:0}
+.btDeskContainer{height:100%;overflow:auto}
 
 .yui3-widget-pushpop{overflow:hidden}
 

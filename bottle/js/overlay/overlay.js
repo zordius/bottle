@@ -243,13 +243,13 @@ var html = Y.one('html'),
             if (Y.Bottle.get('nativeScroll') && !Y.Bottle.Device.getTouchSupport()) {
                 if (show) {
                     scrollY = Y.Bottle.Page.getScrollY();
-                    html.addClass('bov_display');
+                    html.addClass('bov_display').toggleClass('bov_desktop', this.get('deskScroll'));
                     body.setStyles({
                         top: -scrollY + 'px',
                         height: scrollY + Y.Bottle.Device.getBrowserHeight()
                     });
                 } else {
-                    html.removeClass('bov_display');
+                    html.removeClass('bov_display').removeClass('bov_desktop');
                     body.setStyles({
                         top: '',
                         height: 'auto'
@@ -274,6 +274,17 @@ var html = Y.one('html'),
          * @static
          */
         ATTRS: {
+            /**
+             * Turn the overlay trun into 'desktop mode'. The overlay will not support push/pop,
+             * and disable container (which can handle touch scroll and manage content size) .
+             *
+             * @attribute deskScroll
+             * @type Boolean
+             * @default true when the device do not support touch, false when the device support touch.
+             */
+            deskScroll: {
+                validator: Y.Lang.isBoolean
+            },
             /**
              * The Overlay show direction. Should be one of:
              * <dl>
@@ -377,6 +388,20 @@ var html = Y.one('html'),
 
             fullPage: function (srcNode) {
                 return (srcNode.getData('full-page') === 'false') ? false : true;
+            },
+
+            deskScroll: function (srcNode) {
+                var V = srcNode.getData('desk-scroll');
+
+                if (V === 'true') {
+                    return true;
+                }
+
+                if (V === 'false') {
+                    return false;
+                }
+
+                return !Y.Bottle.Device.getTouchSupport();
             }
         },
 
