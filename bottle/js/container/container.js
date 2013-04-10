@@ -7,7 +7,6 @@ var HEIGHT_CHANGE = 'heightChange',
     WIDTH_CHANGE = 'widthChange',
     SYNC_CONTENT = 'btSyncContent',
     fixedPos = Y.Bottle.Device.getPositionFixedSupport(),
-    nodeBody = Y.one('body'),
 
     handleFixPos = function (header, fixed, nativeScroll) {
         var node,
